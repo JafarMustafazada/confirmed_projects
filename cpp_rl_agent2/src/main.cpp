@@ -944,7 +944,7 @@ int main(int argc, char **argv) {
 	explorer.printStats();
 	explorer.visualizeGrid();
 	
-	if (visual != 2) explorer.getToTarget();
+	if (visual != 2) explorer.run();
 
 	cout << "\nProgram complete." << endl;
 	return 0;
