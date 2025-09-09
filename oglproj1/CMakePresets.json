@@ -1,0 +1,37 @@
+{
+	"version": 8,
+	"configurePresets": [
+		{
+			"name": "msvc1",
+			"displayName": "VS 2022 - amd64",
+			"description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+			"generator": "Visual Studio 17 2022",
+			"toolset": "host=x64",
+			"architecture": "x64",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_C_COMPILER": "cl.exe",
+				"CMAKE_CXX_COMPILER": "cl.exe"
+			}
+		},
+		{
+			"name": "gnu1",
+			"displayName": "GCC 13.3.0 x86_64-linux-gnu",
+			"description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_C_COMPILER": "/usr/bin/gcc",
+				"CMAKE_CXX_COMPILER": "/usr/bin/g++",
+				"CMAKE_BUILD_TYPE": "Release"
+			}
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "msvc1-release",
+			"displayName": "VS 2022 - amd64 - Release",
+			"configurePreset": "msvc1",
+			"configuration": "Release"
+		}
+	]
+}
